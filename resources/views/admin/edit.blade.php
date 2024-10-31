@@ -40,14 +40,14 @@
         </div>
 
         <div class="mb-3">
-            <label for="image" class="form-label">Profile Image:</label>
+            <label for="image" class="form-label">Profile Avatar:</label>
             <div class="input-group">
             <span class="input-group-btn" style="margin-right: 15px">
                 <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
                     <i class="fa fa-picture-o"></i> Choose
                 </a>
             </span>
-                <input id="thumbnail" class="form-control" type="text" name="image" value="{{ $user->image }}">
+                <input id="thumbnail" class="form-control" type="text" name="avatar" value="{{ $user->avatar }}">
             </div>
             <img id="holder" style="margin-top:15px;max-height:100px;">
         </div>

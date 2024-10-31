@@ -25,22 +25,21 @@ class AdminController extends Controller
 
     public function store(StoreUserFormRequest $request)
     {
-        User::create($request->validated());
+        $user = User::create($request->validated());
 
-        return redirect()->route('admin')->with('success', 'User Created Successfully! ');
+        return redirect()->route('admin')->with('success', 'User: ' . $user->name . ' Created Successfully! ');
     }
 
-    public function edit(int $id) {
-        $user = User::find($id);
+    public function edit(User $user) {
 
         return view('admin.edit', compact('user'));
+
     }
 
-    public function update(UpdateUserFormRequest $request, int $id) {
+
+    public function update(UpdateUserFormRequest $request,  User $user) {
 
         $data = $request->validated();
-
-        $user = User::find($id);
 
         $user->update($data);
 
